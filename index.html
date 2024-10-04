@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="assets/logo-icon.png" type="image/x-icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="general.css">
+    <title>Music Streamer Online</title>
+</head>
+<body>
+    <header class="header_container">
+        <div class="header_content">
+            <div class="logo_content">
+                <img src="assets/logo-icon.png" alt="">
+                <h1>Music Streamer Online</h1>
+            </div>
+            <div class="button_container">
+                <button class="buttons" id="login_btn">Login</button>
+                <button class="buttons" id="signup_btn">Sign-up</button>
+            </div>
+        </div>
+    </header>
+    <main>
+        <section class="music_container">
+            <div class="music_content">
+                <section class="artist_profile_container">
+                    <div class="header_showmore">
+                        <h3>Hits Songs </h3>
+                    </div>
+                    <div class="artist_profile_content" id="artist_profile_content">
+                        <div class="custom-scrollbar" id="custom-scrollbar">
+                            <div class="custom-scrollbar-thumb" id="customthumb">
+
+                            </div>
+                        </div>
+                    </div>  
+                </section>
+                <section class="MostPlayed_container">
+                    <div class="header_showmore">
+                        <h3>Most Played Songs </h3>
+                    </div>
+                        <div class="MostPlayed_content" id="MostPlayed_content"></div>
+                </section>
+            </div>
+        </section>        
+        <aside class="playlist_container">
+            <div class="playlist_content">
+
+            </div>
+        </aside>
+    </main>
+    <div class="music_player" id="music_player" style="display: none;">
+        <div class="util">
+            <div id="minibtn" style="display: none;">_</div>
+            <div id="closebtn">X</div>
+        </div>
+        <div class="audio_container" id="audio_container">
+            <img src="assets/artist-profile.png" alt="" id="coverUrl" class="coverUrl">
+            <div class="progressbar_container">
+                <h4 id="songTitle">SampleName</h4>
+                <p id="subTitle">Sampleartist</p>
+                <input type="range" value="0" id="progress">
+            </div>
+        </div>
+        <div class="controllers" id="controllers">
+            <button id="backward" ><img class="playerbtns" src="assets/forward.png" alt=""></button>
+            <button id="pause" ><img class="playerbtns" id="playbtn" src="assets/pause.png" alt=""></button>
+            <button id="forward"><img class="playerbtns" src="assets/forward.png" alt=""></button>
+        </div>
+    </div> 
+    <script src="https://firebase.google.com/docs/web/setup#available-libraries"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/7.14.1-0/firebase.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script type="module" src="index-module.js"></script>
+</body>
+</html>
