@@ -150,6 +150,10 @@ function playSong(audioUrl, songName, subtitle, imgUrl) {
     const minibtn = document.getElementById('minibtn');
     const musicContainer = document.getElementById('music_player');
     const controllers = document.getElementById('controllers');
+    const startRunning = document.getElementById('startRunning');
+    const endRunning = document.getElementById('endRunning');
+    const runningTime = document.querySelector('.runningTime');
+    const playerbtns = document.querySelectorAll('.playerbtns');
 
     coverUrl.src = imgUrl;
     songTitle.textContent = songName;
@@ -171,11 +175,25 @@ function playSong(audioUrl, songName, subtitle, imgUrl) {
     audio.onloadedmetadata = function() {
         progress.max = audio.duration;
         progress.value = audio.currentTime;
+
+        // Set initial values
+        startRunning.textContent = formatTime(0);
+        endRunning.textContent = formatTime(audio.duration);
     };
 
     audio.ontimeupdate = function() {
         progress.value = audio.currentTime;
+
+         // Update time displays
+         startRunning.textContent = formatTime(audio.currentTime);
+         endRunning.textContent = formatTime(audio.duration - audio.currentTime);
     };
+
+    function formatTime(timeInSeconds) {
+        const minutes = Math.floor(timeInSeconds / 60);
+        const seconds = Math.floor(timeInSeconds % 60);
+        return `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+    }
 
     audio.onended = function() {
         playRandomSong(); 
@@ -184,14 +202,31 @@ function playSong(audioUrl, songName, subtitle, imgUrl) {
     audioContainer.appendChild(audio);
     currentAudio = audio; 
 
-        if (backward) {
-        backward.onclick = function() {
-            audio.currentTime -= 10;
+    let currentSongIndex = allSongs.findIndex(song => song.audioUrl === audioUrl);
+
+    if (previousSong) {
+        let clickTime = 0;
+        previousSong.onclick = function(event) {
+            event.stopPropagation();
+            playbtn.src = 'assets/pause.png';
+            const now = new Date().getTime();
+            const timeSinceLastClick = now - clickTime;
+            clickTime = now;
+
+            if (timeSinceLastClick > 300 || audio.currentTime > 3) {
+                // If it's been more than 300ms since last click or current time > 3s, restart the song
+                audio.currentTime = 0;
+            } else {
+                // Play the previous song
+                currentSongIndex = (currentSongIndex - 1 + allSongs.length) % allSongs.length;
+                allSongs[currentSongIndex].playSong();
+            }
         };
     }
 
     if (pause) {
-        pause.onclick = function() {
+        pause.onclick = function(event) {
+            event.stopPropagation();
             if (audio.paused) {
                 audio.play();
                 playbtn.src = 'assets/pause.png';
@@ -202,8 +237,25 @@ function playSong(audioUrl, songName, subtitle, imgUrl) {
         };
     }
 
+    if (nextSong) {
+        nextSong.onclick = function(event) {
+            event.stopPropagation();
+            playbtn.src = 'assets/pause.png';
+            currentSongIndex = (currentSongIndex + 1) % allSongs.length;
+            allSongs[currentSongIndex].playSong();
+        };
+    }
+
+    if (backward) {
+        backward.onclick = function(event) {
+            event.stopPropagation();
+            audio.currentTime -= 10;
+        };
+    }
+
     if (forward) {
-        forward.onclick = function() {
+        forward.onclick = function(event) {
+            event.stopPropagation();
             audio.currentTime += 10; 
         };
     }
@@ -214,13 +266,25 @@ function playSong(audioUrl, songName, subtitle, imgUrl) {
         audio.currentTime = progress.value;
     });
 
-    musicContainer.addEventListener('click', () => {
+    musicContainer.addEventListener('click', event => {
         musicContainer.classList.add('musicPlayer_enlarge');
         audioContainer.classList.add('audio_container_enlarge');
         coverUrl.classList.add('imageCoverUrl_enlarge');
         controllers.classList.add('controllers_enlarge')
+        progress.classList.add('progress_enlarge')
         minibtn.style.display = "flex";
-        console.log('Classes added');
+
+        playerbtns.forEach(playerbtns =>{
+            playerbtns.classList.add('playerbtns_enlarge');
+        })
+        
+        if(musicContainer.classList.contains('musicPlayer_enlarge')){
+            songTitle.style.fontSize="4rem";
+            subTitle.style.fontSize="1rem";
+            startRunning.style.fontSize="0.9rem";
+            endRunning.style.fontSize="0.9rem";
+            runningTime.style.marginTop = "80px";
+        }
     });
 
     minibtn.addEventListener('click', (event) => {
@@ -228,9 +292,22 @@ function playSong(audioUrl, songName, subtitle, imgUrl) {
         musicContainer.classList.remove('musicPlayer_enlarge');
         audioContainer.classList.remove('audio_container_enlarge');
         coverUrl.classList.remove('imageCoverUrl_enlarge');
-        controllers.classList.remove('controllers_enlarge')
+        controllers.classList.remove ('controllers_enlarge')
+        progress.classList.remove('progress_enlarge')
         minibtn.style.display = "none";
-        console.log('Classes removed');
+        
+        if(minibtn.style.display == "none"){
+            songTitle.style.fontSize="1.2rem";
+            subTitle.style.fontSize="0.8rem";
+            startRunning.style.fontSize="initial";
+            endRunning.style.fontSize="initial";
+            runningTime.style.marginTop = "initial";
+
+            playerbtns.forEach(playerbtns =>{
+                playerbtns.classList.remove('playerbtns_enlarge');
+            })
+        }
+        
     });
 
     closebtn.addEventListener("click",()=>{
@@ -263,7 +340,3 @@ function MostPlayedSongs(playedSong = null) {
 }
 
 loadHitsSongs();
-
-
-
-

@@ -52,20 +52,26 @@
     </main>
     <div class="music_player" id="music_player" style="display: none;">
         <div class="util">
-            <div id="minibtn" style="display: none;">_</div>
-            <div id="closebtn">X</div>
+            <div id="minibtn" class="utilbtn" style="display: none;">_</div>
+            <div id="closebtn" class="utilbtn">X</div>
         </div>
         <div class="audio_container" id="audio_container">
             <img src="assets/artist-profile.png" alt="" id="coverUrl" class="coverUrl">
             <div class="progressbar_container">
                 <h4 id="songTitle">SampleName</h4>
                 <p id="subTitle">Sampleartist</p>
-                <input type="range" value="0" id="progress">
+                <div class="runningTime">
+                    <p id="startRunning">00:00</p>
+                    <p id="endRunning">05:00</p>
+                </div>
+                <input type="range" value="0" id="progress" disabled>
             </div>
         </div>
         <div class="controllers" id="controllers">
             <button id="backward" ><img class="playerbtns" src="assets/forward.png" alt=""></button>
+            <button id="previousSong" ><img class="playerbtns" src="assets/backnext.png" alt=""></button>
             <button id="pause" ><img class="playerbtns" id="playbtn" src="assets/pause.png" alt=""></button>
+            <button id="nextSong"><img class="playerbtns" src="assets/backnext.png" alt=""></button>
             <button id="forward"><img class="playerbtns" src="assets/forward.png" alt=""></button>
         </div>
     </div> 
