@@ -341,7 +341,7 @@ main{
     .controllers{
         position: absolute;
         width: 65%;
-        left: 70%;
+        left: 73%;
         transform: translate(-50%);
         bottom: 5px;
     }
