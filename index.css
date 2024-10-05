@@ -25,7 +25,7 @@
 }
 .buttons{
     padding: 10px 15px;
-    border-radius: 5px;
+    border-radius: 1px;
     border: none;
     background-color: var(--b-c);
     color: var(--tc-);
@@ -162,6 +162,17 @@ main{
     width: 100%;
 }
 
+.title_song{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.title_song span{
+    font-size: 20px;
+    color: white;
+}
+
 .progressbar_container h4 {
     font-size: 1.2rem;
     text-transform: uppercase;
@@ -210,12 +221,13 @@ main{
     border: none;
 }
 
-.playerbtns {
-    width: 40px;
-    height: 40px;
+.playerbtns{
+    width: 30px;
+    height: 30px;
+    filter: invert(1);
 }
 
-.controllers button:nth-child(2) .playerbtns,.controllers button:nth-child(1) .playerbtns {
+.controllers button:nth-child(2) .playerbtns{
     transform: rotate(180deg);
 }
 
@@ -274,11 +286,19 @@ main{
 }
 
 .utilbtn{
-    background-color: hsl(66, 100%, 38%);
+    background-color: hsl(0, 0%, 100%);
     padding: 3px 10px;
     border-radius: 5px;
     font-weight: bolder;
+    color: black;
 }
+.util #closebtn{
+    background-color: hsla(0, 0%, 13%, 0.815);
+    color: white;
+}
+
+/* 1179×2556 pixels at 460ppi */
+
 
 @media screen and (max-width:700px) {
     .logo_content h1{
@@ -304,7 +324,7 @@ main{
         height: auto;
         margin: auto;
         position: initial;
-
+        transition: all 0.8s ease !important;
     }
     .header_showmore h3{
         font-size: 0.9rem;
@@ -313,17 +333,17 @@ main{
         right: initial;
         left: 50%;
         transform: translate(-50%);
-        width:95vw;
-        height: 150px;
-        bottom: 30px;
+        width: 95vw;
+        height: 160px;
+        bottom: 10px;
         transition: all 0.8s ease !important;
     }
     .controllers{
         position: absolute;
         width: 65%;
-        left: 65%;
+        left: 70%;
         transform: translate(-50%);
-        bottom: 0;
+        bottom: 5px;
     }
     .audio_container{
         position: absolute;
@@ -336,23 +356,48 @@ main{
         margin-bottom: 30px;
     }
 
-    .musicPlayer_enlarge{
+    .musicPlayer_enlarge {
         top: 0;
         min-width: 95vw;
         min-width: 100svw;
         min-height: 100svh;
-        transition: all 0.8s ease;
         display: flex !important;
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        align-content: center;
         transition: all 0.8s ease;
+        background: rgba(255, 255, 255, 0.2); /* Semi-transparent background */
+        backdrop-filter: blur(10px); /* Blur effect */
+        -webkit-backdrop-filter: blur(10px); /* For Safari compatibility */
+        border-radius: 10px; /* Optional: rounded corners */
+        border: 1px solid rgba(255, 255, 255, 0.3); /* Optional: light border */
     }
+
+    .progressbar_container #songTitle {
+        font-size: 1.2rem;
+        text-transform: uppercase;
+        color: white;
+        width: 70%;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+    }
+    
+    #startRunning, #endRunning{
+        font-size: 0.9rem;
+        color: white;
+    }
+    
     .audio_container_enlarge {
         position: initial;
         transition: all 0.8s ease;
+        margin-top: 100px !important;
     }
     .controllers_enlarge{
+        background-color: hsla(0, 0%, 0%, 0.466);
+        padding: 20px 10px;
+        border-radius: 20px;
         position: initial;
         width: 90%;
         transform: initial;
@@ -368,9 +413,14 @@ main{
         transition: all 0.8s ease;
     }
     .progress_enlarge{
-        margin-top: 50px !important;
+        margin-top: 20px !important;
         transition: all 0.8s ease;
     }
+    .playerbtns_enlarge{
+        width: 30px;
+        height: 30px;
+    }
+    
     .util{
         top: 5px;
         right: 15px;

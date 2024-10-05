@@ -131,6 +131,7 @@ async function loadHitsSongs() {
         if (data.count && data.count > 0) {
             mostPlayedSongs.push(artistProfile);
         }
+
     });
 
     playQueue = [...allSongs];
@@ -163,7 +164,7 @@ function playSong(audioUrl, songName, subtitle, imgUrl) {
         currentAudio.pause();
         currentAudio.currentTime = 0;
         audioContainer.removeChild(currentAudio);
-    }
+    } 
 
     // Create a new audio element
     const audio = document.createElement('audio');
@@ -260,6 +261,11 @@ function playSong(audioUrl, songName, subtitle, imgUrl) {
         };
     }
 
+    progress.addEventListener('click', (event) => {
+        event.stopPropagation();
+        audio.pause();
+    });
+
     progress.addEventListener('change', (event) => {
         event.stopPropagation();
         audio.play();
@@ -279,16 +285,25 @@ function playSong(audioUrl, songName, subtitle, imgUrl) {
         })
         
         if(musicContainer.classList.contains('musicPlayer_enlarge')){
-            songTitle.style.fontSize="4rem";
+            songTitle.style.fontSize="2.5rem";
             subTitle.style.fontSize="1rem";
             startRunning.style.fontSize="0.9rem";
             endRunning.style.fontSize="0.9rem";
-            runningTime.style.marginTop = "80px";
+            runningTime.style.marginTop = "20px";
+
+            if (playerbtns.length >= 3) {
+                playerbtns[2].style.width = '40px';
+                playerbtns[2].style.height = '40px';
+            }
         }
     });
 
     minibtn.addEventListener('click', (event) => {
         event.stopPropagation(); 
+        resetMusicPlayer();
+    });
+
+    function resetMusicPlayer(){
         musicContainer.classList.remove('musicPlayer_enlarge');
         audioContainer.classList.remove('audio_container_enlarge');
         coverUrl.classList.remove('imageCoverUrl_enlarge');
@@ -303,14 +318,20 @@ function playSong(audioUrl, songName, subtitle, imgUrl) {
             endRunning.style.fontSize="initial";
             runningTime.style.marginTop = "initial";
 
+            if (playerbtns.length >= 3) {
+                playerbtns[2].style.width = '40px';
+                playerbtns[2].style.height = '40px';
+            }
+
             playerbtns.forEach(playerbtns =>{
                 playerbtns.classList.remove('playerbtns_enlarge');
             })
         }
-        
-    });
+    }
 
-    closebtn.addEventListener("click",()=>{
+    closebtn.addEventListener("click",(event)=>{
+        event.stopPropagation();
+        resetMusicPlayer();
         document.getElementById('music_player').style.display = "none";
         currentAudio.pause();
     })
@@ -340,3 +361,6 @@ function MostPlayedSongs(playedSong = null) {
 }
 
 loadHitsSongs();
+
+
+
