@@ -311,14 +311,17 @@ main{
     }
     .music_player{
         right: initial;
-        width: 100%;
+        left: 50%;
+        transform: translate(-50%);
+        width:95vw;
         height: 150px;
         bottom: 30px;
+        transition: all 0.8s ease !important;
     }
     .controllers{
         position: absolute;
-        width: 100%;
-        left: 84%;
+        width: 65%;
+        left: 65%;
         transform: translate(-50%);
         bottom: 0;
     }
@@ -326,23 +329,37 @@ main{
         position: absolute;
         left: 0;
         width: 90%;
+        margin: auto;
     }
     .audio_container #progress {
         height: 20px;
         margin-bottom: 30px;
     }
-    
+
     .musicPlayer_enlarge{
-        width: 100vw;
-        height: 100vh;
+        top: 0;
+        min-width: 95vw;
+        min-width: 100svw;
+        min-height: 100svh;
+        transition: all 0.8s ease;
+        display: flex !important;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
         transition: all 0.8s ease;
     }
     .audio_container_enlarge {
-        position: absolute;
-        left: 50%;
-        top: 43%;
-        transform: translate(-50%,-50%);
-        gap: 50px;
+        position: initial;
+        transition: all 0.8s ease;
+    }
+    .controllers_enlarge{
+        position: initial;
+        width: 90%;
+        transform: initial;
+        display: flex;
+        margin: auto;
+        justify-content: space-evenly;
+        align-items: center;
         transition: all 0.8s ease;
     }
     .imageCoverUrl_enlarge {
@@ -353,18 +370,6 @@ main{
     .progress_enlarge{
         margin-top: 50px !important;
         transition: all 0.8s ease;
-    }
-    .controllers_enlarge{
-        display: flex;
-        left: 51%;
-        bottom:5%;
-        transform: translate(-50%,-50%);
-        transition: all 0.8s ease;
-        gap: 20px;
-    }
-    .playerbtns_enlarge{
-        width: 65px;
-        height: 65px;
     }
     .util{
         top: 5px;
