@@ -23,10 +23,10 @@
     </header>
     <main>
         <section class="music_container">
-            <div class="music_content">
+            <div class="music_content" id="music_content">
                 <section class="artist_profile_container">
                     <div class="header_showmore">
-                        <h3>Hits Songs </h3>
+                        <h3>New Upload Songs </h3>
                     </div>
                     <div class="artist_profile_content" id="artist_profile_content">
                         <div class="custom-scrollbar" id="custom-scrollbar">
@@ -41,6 +41,12 @@
                         <h3>Most Played Songs </h3>
                     </div>
                         <div class="MostPlayed_content" id="MostPlayed_content"></div>
+                </section>
+                <section class="category_container">
+                    <div class="header_showmore">
+                        <h3>Categories</h3>
+                    </div>
+                        <div class="category_content" id="category_content"></div>
                 </section>
             </div>
         </section>        
@@ -59,7 +65,7 @@
             <img src="assets/artist-profile.png" alt="" id="coverUrl" class="coverUrl">
             <div class="progressbar_container">
                 <div class="title_song">
-                    <h4 id="songTitle">SampleName</h4> <span>:</span>
+                    <h4 id="songTitle">SampleName</h4> <span id="divider"></span>
                     <p id="subTitle">Sampleartist</p>
                 </div>
                 <div class="runningTime">
