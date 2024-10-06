@@ -170,10 +170,6 @@ main{
     width: 100%;
 }
 
-/* .title_song{
-    
-} */
-
 .title_song span{
     font-size: 20px;
     color: white;
@@ -303,6 +299,7 @@ main{
 .util #closebtn{
     background-color: hsla(0, 0%, 13%, 0.815);
     color: white;
+    margin-right: -10px;
 }
 
 /* category List */
@@ -460,7 +457,7 @@ main{
         transition: all 0.8s ease !important;
     }
     .music_content{
-        max-height: 650px;
+        max-height: 680px;
         overflow-y: scroll;
     }
     .header_showmore h3{
@@ -493,7 +490,7 @@ main{
         margin-bottom: 30px;
     }
     .music_content_adjust{
-        height: 600px;
+        height: 590px;
     }
     .musicPlayer_enlarge {
         top: 0;
@@ -511,16 +508,42 @@ main{
         -webkit-backdrop-filter: blur(10px); /* For Safari compatibility */
         border-radius: 10px; /* Optional: rounded corners */
         border: 1px solid rgba(255, 255, 255, 0.3); /* Optional: light border */
+    }    
+    .progressbar_container {
+        width: 70% !important;
     }
-
+    
     .progressbar_container #songTitle {
         font-size: 1.2rem;
         text-transform: uppercase;
         color: white;
-        width: 90%;
+        width: 100%;
         text-align: center;
         position: relative;
+        text-wrap: nowrap;
+    }
+    .title_song{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
         overflow: hidden;
+    }
+
+    .centered {
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important;
+        height: 100%;
+        animation: slide 10s linear infinite;
+    }
+
+    @keyframes slide {
+        0% {
+            right: -100%;
+        }
+        100% {
+            right: 150%;
+        }
     }
     
     #startRunning, #endRunning{
@@ -546,14 +569,14 @@ main{
         align-items: center;
         transition: all 0.8s ease;
     }
-    .add_divider_enlarge::before{
+    /* .add_divider_enlarge::before{
         content: ' : ';
-    }
-    .songTitle_enlarge{
+    } */
+    /* .songTitle_enlarge{
         display: flex;
         flex-direction: row;
         align-items: center;
-    }
+    } */
     .imageCoverUrl_enlarge {
         width: 300px !important;
         height: 300px !important;
@@ -568,7 +591,7 @@ main{
         height: 30px;
     }
     .category-songs-list-play{
-        height: 640px;
+        height: 600px;
         overflow: scroll;
     }
     
