@@ -198,6 +198,7 @@ async function displayCategorySongs(category) {
     backButton.classList.add('back-button');
     backButton.onclick = () => {
         songListContainer.remove();
+        songsListdata ="";
         document.getElementById('category_content').style.display = 'flex';
     };
     
@@ -260,6 +261,7 @@ async function displayCategorySongs(category) {
                 // Add play button
                 const playButton = document.createElement('button');
                 playButton.classList.add('play-button');
+                music_content.classList.add('music_content_adjust');
                 playButton.innerHTML = '▶';
                 songElement.appendChild(playButton);
 
@@ -464,8 +466,12 @@ function resetMusicPlayer(){
     progress.classList.remove('progress_enlarge');
     title_song.classList.remove('songTitle_enlarge');
     divider.classList.remove('add_divider_enlarge');
-    music_content.classList.remove('music_content_adjust');
     minibtn.style.display = "none";
+
+    if(musicContainer.style.display == "none"){
+        music_content.classList.remove('music_content_adjust');
+    }
+    
     
     if(minibtn.style.display == "none"){
         songTitle.style.fontSize="1.2rem";
@@ -528,8 +534,8 @@ progress.addEventListener('change', (event) => {
 
 closebtn.addEventListener("click",(event)=>{
     event.stopPropagation();
-    resetMusicPlayer();
     document.getElementById('music_player').style.display = "none";
+    resetMusicPlayer();
     currentAudio.pause();
 })
 
