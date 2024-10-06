@@ -360,11 +360,6 @@ main{
     gap: 15px;
 }
 
-.category-songs-list-play{
-    height: 640px;
-    overflow: scroll;
-}
-
 .song-item {
     display: flex;
     align-items: center;
@@ -571,6 +566,10 @@ main{
     .playerbtns_enlarge{
         width: 30px;
         height: 30px;
+    }
+    .category-songs-list-play{
+        height: 640px;
+        overflow: scroll;
     }
     
     .util{
