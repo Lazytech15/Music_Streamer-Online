@@ -19,6 +19,7 @@ const audioContainer = document.getElementById('audio_container');
 const songTitle = document.getElementById('songTitle');
 const subTitle = document.getElementById('subTitle');
 const progress = document.getElementById('progress');
+const progressbar_container = document.querySelector('.progressbar_container');
 const coverUrl = document.getElementById('coverUrl');
 const playbtn = document.getElementById('playbtn');
 const closebtn = document.getElementById('closebtn');
@@ -532,6 +533,7 @@ function resetMusicPlayer(){
     coverUrl.classList.remove('imageCoverUrl_enlarge');
     controllers.classList.remove ('controllers_enlarge');
     progress.classList.remove('progress_enlarge');
+    progressbar_container.classList.remove('progress_content_enlarge');
     // title_song.classList.remove('songTitle_enlarge');
     // divider.classList.remove('add_divider_enlarge');
     minibtn.style.display = "none";
@@ -570,6 +572,7 @@ musicContainer.addEventListener('click', event => {
     coverUrl.classList.add('imageCoverUrl_enlarge');
     controllers.classList.add('controllers_enlarge');
     progress.classList.add('progress_enlarge');
+    progressbar_container.classList.add('progress_content_enlarge');
     // title_song.classList.add('songTitle_enlarge');
     // divider.classList.add('add_divider_enlarge');
     minibtn.style.display = "flex";
