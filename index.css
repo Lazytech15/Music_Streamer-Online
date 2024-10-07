@@ -431,7 +431,7 @@ main{
     font-style: italic;
 }
 
-@media only screen and (min-width: 375px) and (max-width: 430px) {
+@media only screen and (min-width: 375px) and (max-width: 500px) {
     .logo_content h1{
         font-size: 1em;
     }
