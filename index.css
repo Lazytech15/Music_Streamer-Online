@@ -44,6 +44,7 @@ main{
     position: absolute;
     right: 10px;
     height: 85vh;
+    height: -webkit-fill-available;
 }
 .music_content{
     background-color: var(--bg-c-c);
@@ -56,6 +57,7 @@ main{
 .playlist_container{
     width: 20%;
     height: 85vh;
+    height: -webkit-fill-available;
 }
 
 .playlist_content{
@@ -369,7 +371,7 @@ main{
 }
 
 .song-item:hover {
-    background-color: rgba(255, 255, 255, 0.1);
+    background-color: hsla(0, 0%, 100%, 0.1);
 }
 
 .song-item img {
@@ -429,10 +431,9 @@ main{
     font-style: italic;
 }
 
-
-@media screen and (max-width:700px) {
+@media only screen and (min-width: 375px) and (max-width: 430px) {
     .logo_content h1{
-        font-size: 1.5rem;
+        font-size: 1em;
     }
     .button_container{
         display: flex;
@@ -441,10 +442,34 @@ main{
         gap: 10px;
     }
     .buttons{
-        width: 100px;
-        font-size: 0.7rem;
+        width: 10em;
+        font-size: 0.7em;
         border-radius: 5px;
         padding: 5px;
+        font-size: 0.5em;
+    }
+    .artist_profile{
+        min-width: 7em;
+    }
+    .artist_profile img{
+        width: 4em;
+        height: 4em;
+    }
+    .artist_profile h2, .artist_profile p{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        font-size: 0.9em;
+    }
+    .artist_profile p{
+        border-top: 2px solid hsla(0, 0%, 26%, 0.377);
+        margin-top: 1em;
+        font-size: 0.7em;
+        border-radius: 0.6em;
+        padding: 0.3em;
+        min-height:4.5em ;
     }
     .playlist_container{
         display: none;
@@ -457,7 +482,7 @@ main{
         transition: all 0.8s ease !important;
     }
     .music_content{
-        max-height: 680px;
+        max-height: 520px;
         overflow-y: scroll;
     }
     .header_showmore h3{
@@ -467,17 +492,36 @@ main{
         right: initial;
         left: 50%;
         transform: translate(-50%);
-        width: 95vw;
-        height: 180px;
+        width: 98vw;
+        height: 8em;
         bottom: 10px;
         transition: all 0.8s ease !important;
     }
+    .title_song #songTitle{
+        font-size: 0.8em;
+        text-transform: uppercase;
+        color: white;
+        width: 100%;
+        text-align: center;
+        position: relative;
+        text-wrap: nowrap;
+    }
+    .title_song #subTitle{
+        font-size: 0.6em !important;
+    }
     .controllers{
         position: absolute;
-        width: 65%;
-        left: 70%;
+        width: 40%;
+        left: 66%;
         transform: translate(-50%);
         bottom: 5px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .playerbtns{
+        width: 1.8em !important;
+        height: 1.8em !important;
     }
     .audio_container{
         position: absolute;
@@ -489,14 +533,25 @@ main{
         height: 20px;
         margin-bottom: 30px;
     }
+    .utilbtn{
+        font-size: 0.6em;
+        width: 0.3em;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .util #closebtn{
+        margin-right: -1.3em;
+    }
     .music_content_adjust{
-        height: 590px;
+        height: 26em;
     }
     .musicPlayer_enlarge {
         top: 0;
         min-width: 95vw;
         min-width: 100svw;
         min-height: 100svh;
+        height: -webkit-fill-available;
         display: flex !important;
         flex-direction: column;
         justify-content: center;
@@ -510,17 +565,7 @@ main{
         border: 1px solid rgba(255, 255, 255, 0.3); /* Optional: light border */
     }    
     .progressbar_container {
-        width: 70%;
-    }
-    
-    .progressbar_container #songTitle {
-        font-size: 1.2rem;
-        text-transform: uppercase;
-        color: white;
-        width: 100%;
-        text-align: center;
-        position: relative;
-        text-wrap: nowrap;
+        width: 59%;
     }
     .title_song{
         display: flex;
@@ -554,11 +599,11 @@ main{
     .audio_container_enlarge {
         position: initial;
         transition: all 0.8s ease;
-        margin-top: 100px !important;
+        margin-top: 3em !important;
     }
     .controllers_enlarge{
         background-color: hsla(0, 0%, 0%, 0.466);
-        padding: 20px 10px;
+        padding: 0.8em 0.2em;
         border-radius: 20px;
         position: initial;
         width: 90%;
@@ -567,6 +612,7 @@ main{
         margin: auto;
         justify-content: space-evenly;
         align-items: center;
+        margin-top: -3em;
         transition: all 0.8s ease;
     }
     /* .add_divider_enlarge::before{
@@ -578,8 +624,8 @@ main{
         align-items: center;
     } */
     .imageCoverUrl_enlarge {
-        width: 300px !important;
-        height: 300px !important;
+        width: 15em !important;
+        height: 12em !important;
         transition: all 0.8s ease;
     }
     .progress_enlarge{
@@ -594,7 +640,7 @@ main{
         height: 30px;
     }
     .category-songs-list-play{
-        height: 600px;
+        height: 26em;
         overflow: scroll;
     }
     
@@ -603,4 +649,7 @@ main{
         right: 15px;
     }
 }
+
+
+
 

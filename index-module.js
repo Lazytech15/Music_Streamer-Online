@@ -582,7 +582,7 @@ musicContainer.addEventListener('click', event => {
     })
     
     if(musicContainer.classList.contains('musicPlayer_enlarge')){
-        songTitle.style.fontSize="1.8rem";
+        songTitle.style.fontSize="2em";
         subTitle.style.fontSize="1rem";
         startRunning.style.fontSize="0.9rem";
         endRunning.style.fontSize="0.9rem";
