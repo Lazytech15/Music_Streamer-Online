@@ -336,27 +336,8 @@ function playCategorySong(index) {
   function playSong(audioUrl, songName, subtitle, imgUrl) {
     coverUrl.src = imgUrl;
     songTitle.textContent = songName;
-    subTitle.textContent = subtitle;
 
-    // if (songName.length < 10) {
-    //     songTitle.stop();
-    //     songTitle.classList.add('centered');
-    //     songTitle.behavior="slide";
-    //     console.log('stop');
-    // } else {
-    //     songTitle.start();
-    //     songTitle.classList.remove('centered');
-    //     songTitle.behavior="scroll";
-    //     console.log('start');
-    // }
-    
-    if (songName.length < 10) {
-        songTitle.classList.remove('centered');
-        console.log('stop');
-    } else {
-        songTitle.classList.add('centered');
-        console.log('start');
-    }
+    songName.length < 10 ? songTitle.classList.remove('centered') : songTitle.classList.add('centered');
 
     if (currentAudio) {
         currentAudio.pause();
@@ -534,7 +515,7 @@ function resetMusicPlayer(){
     controllers.classList.remove ('controllers_enlarge');
     progress.classList.remove('progress_enlarge');
     progressbar_container.classList.remove('progress_content_enlarge');
-    // title_song.classList.remove('songTitle_enlarge');
+    title_song.classList.remove('songTitle_enlarge');
     // divider.classList.remove('add_divider_enlarge');
     minibtn.style.display = "none";
 
@@ -544,11 +525,11 @@ function resetMusicPlayer(){
     
     
     if(minibtn.style.display == "none"){
-        songTitle.style.fontSize="1.2rem";
-        subTitle.style.fontSize="0.8rem";
-        startRunning.style.fontSize="initial";
-        endRunning.style.fontSize="initial";
-        runningTime.style.marginTop = "initial";
+        songTitle.classList.remove('songTile_enlarge');
+        subTitle.classList.remove('subTitle_enlarge');
+        runningTime.classList.remove('runningTime_enlarge');
+        startRunning.classList.remove('startRunning_enlarge');
+        endRunning.classList.remove('endRunning_enlarge');
         
 
         if (playerbtns.length >= 3) {
@@ -573,7 +554,6 @@ musicContainer.addEventListener('click', event => {
     controllers.classList.add('controllers_enlarge');
     progress.classList.add('progress_enlarge');
     progressbar_container.classList.add('progress_content_enlarge');
-    // title_song.classList.add('songTitle_enlarge');
     // divider.classList.add('add_divider_enlarge');
     minibtn.style.display = "flex";
 
@@ -582,11 +562,12 @@ musicContainer.addEventListener('click', event => {
     })
     
     if(musicContainer.classList.contains('musicPlayer_enlarge')){
-        songTitle.style.fontSize="2em";
-        subTitle.style.fontSize="1rem";
-        startRunning.style.fontSize="0.9rem";
-        endRunning.style.fontSize="0.9rem";
-        runningTime.style.marginTop = "20px";
+        songTitle.classList.add('songTile_enlarge');
+        subTitle.classList.add('subTitle_enlarge');
+        runningTime.classList.add('runningTime_enlarge');
+        startRunning.classList.add('startRunning_enlarge');
+        endRunning.classList.add('endRunning_enlarge');
+        
 
         if (playerbtns.length >= 3) {
             playerbtns[2].style.width = '40px';
