@@ -181,8 +181,6 @@ function createCategoryElement(category) {
     categoryDiv.appendChild(p);
 
     categoryDiv.addEventListener('click', () => {
-        musicContainer.classList.contains('music_player_category') ? musicContainer.classList.add('music_player_category') : 
-        musicContainer.classList.remove('music_player_category');
         displayCategorySongs(category);
     });
 
@@ -282,8 +280,23 @@ async function displayCategorySongs(category) {
                     isPlayingCategory = true; // Set category playing state
                     playCategorySong(index);
                     document.getElementById('music_player').style.display = "flex";
-                    songsList.classList.add('category-songs-list-play'); 
-                    // musicContainer.classList.add('music_player_category');
+                    songsList.classList.add('category-songs-list-play');
+                    if(document.getElementById('category_content').style.display==="none" && document.getElementById('music_player').style.display !== "flex"){
+                        console.log('true');
+                        musicContainer.classList.add('music_player_category');
+                    }else if(!musicContainer.classList.contains('music_player_category')){
+                        musicContainer.classList.add('music_player_category');
+                    }
+                    // if(musicContainer.classList.contains('music_player_category') && musicContainer.style.display==="flex"){
+                    //     musicContainer.classList.remove('music_player_category');
+                    // }
+
+                    // if(document.getElementById('music_player').style.display === "flex"){
+                    //     musicContainer.classList.add('music_player_category');
+                    // }
+                    // if(document.getElementById('category_content').style.display!=="none"){
+                    //     musicContainer.classList.remove('music_player_category');
+                    // }
                     // if(document.getElementById('category_content').style.display=="none"){
                     //     musicContainer.classList.add('music_player_category');
                     //     document.getElementById('music_player').style.display = "flex";
@@ -536,8 +549,9 @@ function resetMusicPlayer(){
         music_content.classList.remove('music_content_adjust');
         musicContainer.classList.add('music_player_category');
     }
-    
-    
+    if(document.getElementById('category_content').style.display==="none"){
+        musicContainer.classList.add('music_player_category');
+    }
     if(minibtn.style.display == "none"){
         songTitle.classList.remove('songTile_enlarge');
         subTitle.classList.remove('subTitle_enlarge');
