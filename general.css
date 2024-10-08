@@ -5,9 +5,11 @@
 }
 html{
   height: -webkit-fill-available;
+  height: 100svh;
 }
 body{
   height: -webkit-fill-available;
+  height: 100svh;
   font-family: "Cutive Mono", monospace;
   background-color: var(--bg-c);
 }
