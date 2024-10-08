@@ -279,8 +279,15 @@ async function displayCategorySongs(category) {
                 songElement.addEventListener('click', () => {
                     isPlayingCategory = true; // Set category playing state
                     playCategorySong(index);
-                    document.getElementById('music_player').style.display = "flex";
-                    musicContainer.classList.add('music_player_category');
+                    if(document.getElementById('category_content').style.display==="none"){
+                        musicContainer.classList.add('music_player_category');
+                        document.getElementById('music_player').style.display = "flex"; 
+                    }else{
+                        musicContainer.classList.remove('music_player_category')
+                    }
+                    // musicContainer.classList.contains('music_player_category') ? 
+                    // musicContainer.classList.remove('music_player_category') : 
+                    // musicContainer.classList.add('music_player_category');
                     songsList.classList.add('category-songs-list-play');
                 });
 
