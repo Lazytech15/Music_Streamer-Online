@@ -86,6 +86,7 @@ class ArtistProfile {
         playSong(this.audioUrl, this.songName, this.subtitle, this.imgUrl);
         document.getElementById('music_player').style.display = "flex";
         music_content.classList.add('music_content_adjust');
+        musicContainer.classList.remove('music_player_category');
 
         const docRef = doc(db, "songs", this.id);
         const docSnap = await getDoc(docRef);
