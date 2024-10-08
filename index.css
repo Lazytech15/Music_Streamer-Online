@@ -642,6 +642,13 @@ main{
         gap: 20px;
         bottom: 1em;
     }
+    .controllers_enlarge{
+        width: 90%;
+        gap: 30px;
+    }
+    .music_player_category{
+        top: 8em;
+    }
     
 }
 @media (max-width:510px) {
@@ -670,8 +677,11 @@ main{
         bottom: 1em;
     }
     .controllers_enlarge{
-        width: 70%;
+        width: 90%;
         gap: 20px;
+    }
+    .music_player_category{
+        top: 8em;
     }
 }
 @media (max-width:470px) {
@@ -744,6 +754,11 @@ main{
 
     .progress_content_enlarge {
         width: 100%;
+    }
+}
+@media (max-width:375px) {
+    .music_player_category{
+        top: 7em;
     }
 }
 
