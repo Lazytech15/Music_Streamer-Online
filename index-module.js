@@ -190,6 +190,7 @@ function createCategoryElement(category) {
 // Add these variables at the top with other declarations
 let currentCategoryPlaylist = [];
 let isPlayingCategory = false;
+let iscategoryPlayed = true;
 
 async function displayCategorySongs(category) {
     const songListContainer = document.createElement('div');
@@ -210,6 +211,7 @@ async function displayCategorySongs(category) {
         if(musicContainer.style.display !== "none"){
             music_content.classList.add('music_content_adjust');
             musicContainer.classList.remove('music_player_category');
+            musicContainer.classList.remove('music_played_category');
         }
     };
     
@@ -287,23 +289,10 @@ async function displayCategorySongs(category) {
                     }else if(!musicContainer.classList.contains('music_player_category')){
                         musicContainer.classList.add('music_player_category');
                     }
-                    // if(musicContainer.classList.contains('music_player_category') && musicContainer.style.display==="flex"){
-                    //     musicContainer.classList.remove('music_player_category');
-                    // }
-
-                    // if(document.getElementById('music_player').style.display === "flex"){
-                    //     musicContainer.classList.add('music_player_category');
-                    // }
-                    // if(document.getElementById('category_content').style.display!=="none"){
-                    //     musicContainer.classList.remove('music_player_category');
-                    // }
-                    // if(document.getElementById('category_content').style.display=="none"){
-                    //     musicContainer.classList.add('music_player_category');
-                    //     document.getElementById('music_player').style.display = "flex";
-                    //     songsList.classList.add('category-songs-list-play'); 
-                    // }else{
-                    //     musicContainer.classList.remove('music_player_category')
-                    // }
+                    if(songsList.classList.contains('category-songs-list-play') && document.getElementById('music_player').style.display !== "none" && iscategoryPlayed == true){
+                        musicContainer.classList.add('music_played_category');
+                        iscategoryPlayed = false;
+                    }
                 });
 
                 songsList.appendChild(songElement);

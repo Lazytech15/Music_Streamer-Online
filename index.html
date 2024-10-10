@@ -49,33 +49,27 @@
                         <div class="category_content" id="category_content"></div>
                 </section>
             </div>
-        </section>        
-        <aside class="playlist_container">
-            <div class="playlist_content">
-
+        </section>
+        <div class="music_player" id="music_player">
+            <div class="util">
+                <div id="minibtn" class="utilbtn" style="display: none;">_</div>
+                <div id="closebtn" class="utilbtn">X</div>
             </div>
-        </aside>
-    </main>
-    <div class="music_player" id="music_player" style="display: none;">
-        <div class="util">
-            <div id="minibtn" class="utilbtn" style="display: none;">_</div>
-            <div id="closebtn" class="utilbtn">X</div>
-        </div>
-        <div class="audio_container" id="audio_container">
-            <img src="assets/artist-profile.png" alt="" id="coverUrl" class="coverUrl">
-            <div class="progressbar_container">
-                <div class="title_song">
-                    <h4 id="songTitle">SampleName</h4> <span id="divider"></span>
-                    <!-- <marquee direction="left" behavior="scroll" scrolldelay="100" id="songTitle">SampleName</marquee> <span id="divider"></span> -->
-                    <p id="subTitle">Sampleartist</p>
+            <div class="audio_container" id="audio_container">
+                <img src="assets/artist-profile.png" alt="" id="coverUrl" class="coverUrl">
+                <div class="progressbar_container">
+                    <div class="title_song">
+                        <h4 id="songTitle">SampleName</h4> <span id="divider"></span>
+                        <!-- <marquee direction="left" behavior="scroll" scrolldelay="100" id="songTitle">SampleName</marquee> <span id="divider"></span> -->
+                        <p id="subTitle">Sampleartist</p>
+                    </div>
+                    <div class="runningTime">
+                        <p id="startRunning">00:00</p>
+                        <p id="endRunning">05:00</p>
+                    </div>
+                    <input type="range" value="0" id="progress" disabled>
                 </div>
-                <div class="runningTime">
-                    <p id="startRunning">00:00</p>
-                    <p id="endRunning">05:00</p>
-                </div>
-                <input type="range" value="0" id="progress" disabled>
             </div>
-        </div>
         <div class="controllers" id="controllers">
             <button id="backward" ><img class="playerbtns" src="assets/backward.png" alt=""></button>
             <button id="previousSong" ><img class="playerbtns" src="assets/backnext.png" alt=""></button>
@@ -83,6 +77,7 @@
             <button id="nextSong"><img class="playerbtns" src="assets/backnext.png" alt=""></button>
             <button id="forward"><img class="playerbtns" src="assets/forward.png" alt=""></button>
         </div>
+    </main>
     </div> 
     <script src="https://firebase.google.com/docs/web/setup#available-libraries"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/7.14.1-0/firebase.js"></script>
