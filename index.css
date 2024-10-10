@@ -697,7 +697,7 @@ main{
     }
 }
 
-@media (max-width: 430px){
+/* @media (max-width: 430px){
     .logo_content h1 {
         font-size: 1rem;
     }
@@ -721,9 +721,9 @@ main{
         width:68%;
     }
 
-}
+} */
 
-@media (min-width: 430px){
+@media (max-width: 430px){
     .logo_content h1 {
         font-size: 1rem;
     }

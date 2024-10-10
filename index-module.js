@@ -35,6 +35,7 @@ const title_song = document.querySelector('.title_song');
 const divider = document.getElementById('divider');
 
 let songsListdata="";
+let issongsCategoryShow = false;
 
 const colRef = collection(db, "songs");
 let currentAudio = null; 
@@ -87,6 +88,7 @@ class ArtistProfile {
         document.getElementById('music_player').style.display = "flex";
         music_content.classList.add('music_content_adjust');
         musicContainer.classList.remove('music_player_category');
+        iscategoryPlayed = false;
 
         const docRef = doc(db, "songs", this.id);
         const docSnap = await getDoc(docRef);
@@ -193,6 +195,11 @@ let isPlayingCategory = false;
 let iscategoryPlayed = true;
 
 async function displayCategorySongs(category) {
+    
+    if(document.getElementById('music_player').style.display === "none"){
+        iscategoryPlayed = true;
+    }
+    
     const songListContainer = document.createElement('div');
     songListContainer.classList.add('category-songs-container');
     
@@ -212,6 +219,8 @@ async function displayCategorySongs(category) {
             music_content.classList.add('music_content_adjust');
             musicContainer.classList.remove('music_player_category');
             musicContainer.classList.remove('music_played_category');
+            issongsCategoryShow = false;
+            console.log('issongsCategoryShow',issongsCategoryShow);
         }
     };
     
@@ -290,9 +299,11 @@ async function displayCategorySongs(category) {
                         musicContainer.classList.add('music_player_category');
                     }
                     if(songsList.classList.contains('category-songs-list-play') && document.getElementById('music_player').style.display !== "none" && iscategoryPlayed == true){
+                        console.log('music played');
                         musicContainer.classList.add('music_played_category');
                         iscategoryPlayed = false;
                     }
+                    
                 });
 
                 songsList.appendChild(songElement);
@@ -530,7 +541,6 @@ function resetMusicPlayer(){
     progress.classList.remove('progress_enlarge');
     progressbar_container.classList.remove('progress_content_enlarge');
     title_song.classList.remove('songTitle_enlarge');
-    
     // divider.classList.remove('add_divider_enlarge');
     minibtn.style.display = "none";
 
@@ -541,6 +551,14 @@ function resetMusicPlayer(){
     if(document.getElementById('category_content').style.display==="none"){
         musicContainer.classList.add('music_player_category');
     }
+
+    if(issongsCategoryShow==true){
+        if(songsList.classList.contains('category-songs-list-play') && document.getElementById('music_player').style.display !== "none"){
+            console.log('issongsCategoryShow reset',issongsCategoryShow);
+            musicContainer.classList.add('music_played_category');
+        }
+    }
+    
     if(minibtn.style.display == "none"){
         songTitle.classList.remove('songTile_enlarge');
         subTitle.classList.remove('subTitle_enlarge');
@@ -558,7 +576,6 @@ function resetMusicPlayer(){
             playerbtns.classList.remove('playerbtns_enlarge');
         })
     }
-    console.log(songsListdata);
     
 }
 
@@ -572,12 +589,17 @@ musicContainer.addEventListener('click', event => {
     progress.classList.add('progress_enlarge');
     progressbar_container.classList.add('progress_content_enlarge');
     musicContainer.classList.remove('music_player_category');
+    musicContainer.classList.remove('music_played_category');
     minibtn.style.display = "flex";
 
     playerbtns.forEach(playerbtns =>{
         playerbtns.classList.add('playerbtns_enlarge');
     })
-    
+
+    if(document.getElementById('category_content').style.display === "none"){
+        issongsCategoryShow = true;
+    }
+       
     if(musicContainer.classList.contains('musicPlayer_enlarge')){
         songTitle.classList.add('songTile_enlarge');
         subTitle.classList.add('subTitle_enlarge');
