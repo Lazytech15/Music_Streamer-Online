@@ -309,7 +309,7 @@ body{
       }
       .music_player_enlarge{
         flex-direction: column;
-        gap: 5em;
+        gap: 2.5em;
         height: initial;
         width: initial;
       }
