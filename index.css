@@ -290,8 +290,10 @@ body{
         border-radius: 0.2em;
       }
       #copyright{
+        position: fixed;
+        bottom: 10px;
         font-family: "Roboto Mono", monospace;
-        width: 700;
+        font-weight: 700;
         font-size: 0.7em;
       }
       .music_player_container_enlarge{
@@ -309,7 +311,7 @@ body{
       }
       .music_player_enlarge{
         flex-direction: column;
-        gap: 1.9em;
+        gap: 3em;
         height: initial;
         width: initial;
       }
