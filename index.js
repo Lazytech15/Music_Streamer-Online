@@ -35,6 +35,7 @@ const controller_container = document.querySelector('.controller_container');
 const music_player_container = document.querySelector('.music_player_container');
 const music_player_title_container = document.querySelector('.music_player_title_container');
 const mini_close_container = document.querySelector('.mini_close_container'); 
+const copyright =  document.getElementById('copyright');
 
 
 class ArtistProfile {
@@ -74,6 +75,23 @@ class ArtistProfile {
         profileDiv.appendChild(img);
         profileDiv.appendChild(titlesubtitle_container); 
         profileDiv.appendChild(play_btn);
+
+         // Add click handler for the play button
+         play_btn.addEventListener('click', async (e) => {
+            e.stopPropagation(); // Prevent the profileDiv click from triggering
+            
+            if (currentPlayingElement === profileDiv && currentWavesurfer) {
+                // If this is the current playing song, toggle play/pause
+                currentWavesurfer.playPause();
+                const isPlaying = currentWavesurfer.isPlaying();
+                play_btn.src = isPlaying ? 'assets/pause_button.png' : 'assets/play_button.png';
+                playbtn.src = isPlaying ? 'assets/pause_button.png' : 'assets/play_button.png';
+            } else {
+                // If this is a different song, play it
+                playbtn.src = "assets/pause_button.png";
+                await this.playSong();
+            }
+        });
 
         profileDiv.addEventListener('click', async () => {
             playbtn.src="assets/pause_button.png"
@@ -133,7 +151,7 @@ async function playSong(audioUrl, songName, subtitle, imgUrl, element){
     // Initialize WaveSurfer
     const wavesurfer = WaveSurfer.create({
         container: '#progress_wavesurfing',
-        waveColor: '#4F4A85',
+        waveColor: 'hsl(283, 100%, 20%)',
         progressColor: '#383351',
         barWidth: 4,
         barHeight: 1, 
@@ -304,9 +322,11 @@ music_player.addEventListener('click',()=>{
     document.querySelector('.mini_close_container').style.visibility="visible";
     music_player_container.classList.add('music_player_container_enlarge');
     music_player_title_container.classList.add('music_player_title_container_enlarge');
+    document.querySelector('.song_content').style.display="none";
     mini_close_container.classList.add('mini_close_container_enlarge'); 
     music_player.classList.add('music_player_enlarge');
     music_coverUrl.classList.add('music_coverUrl_enlarge');
+    copyright.style.display="flex";
 
     if (playerbtns.length >= 3) {
         playerbtns[2].style.width = '3.5em';
@@ -318,12 +338,14 @@ minibtn.addEventListener('click', ()=>{
     const playerbtns = document.querySelectorAll('.playerbtns');
     controller_container.classList.remove('controller_container_enlarge');
     document.querySelector('.progress_container').style.display="none";
+    document.querySelector('.song_content').style.display="flex";
     document.querySelector('.mini_close_container').style.visibility="hidden";
     music_player_container.classList.remove('music_player_container_enlarge');
     music_player_title_container.classList.remove('music_player_title_container_enlarge');
     mini_close_container.classList.remove('mini_close_container_enlarge'); 
     music_player.classList.remove('music_player_enlarge');
     music_coverUrl.classList.remove('music_coverUrl_enlarge');
+    copyright.style.display="none";
 
     if (playerbtns.length >= 3) {
         playerbtns[2].style.width = '1.5em';

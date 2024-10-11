@@ -157,7 +157,7 @@ body{
       .titlesubtitle_container h4{
         font-family: "Bebas Neue", sans-serif;
         font-weight: 500;
-        font-size: 1em;
+        font-size: 1.5em;
       }
       .titlesubtitle_container p{
         font-family: "Jost", sans-serif;
@@ -195,7 +195,7 @@ body{
         flex-direction: column;
         gap: 1.2em;
         margin-top: 4em;
-        padding-bottom: 5em;
+        padding-bottom: 5.5em;
       }
       
       .music_player_container {
@@ -226,13 +226,13 @@ body{
         flex-direction: column;
         justify-content: center;
         width: 40%;
-        margin-left: 1.5em;
+        margin-left: 1em;
       }
       .music_player img:last-child {
         margin-left: auto; 
       }
       .music_player h4{
-        font-size: 0.9em;
+        font-size: 1.2em;
       }
       .music_player p{
         font-size: 0.7em;
@@ -244,6 +244,7 @@ body{
       }
       .controller_container{
         display: flex;
+        gap: 0.5em;
       }
       .controller_container button{
         background: none;
@@ -261,6 +262,7 @@ body{
       .runningTime{
         display: flex;
         justify-content: space-between;
+        font-size: 1.5em;
       }
       .progress_container{
         flex-direction: column;
@@ -274,6 +276,7 @@ body{
         flex-direction: row;
         gap: 0.5em;
         height: 20px;
+        background-color: hsl(283, 100%, 55%);
       }
       .mini_close_container button{
         background: none;
@@ -285,6 +288,11 @@ body{
         align-items: center;
         text-align: center;
         border-radius: 0.2em;
+      }
+      #copyright{
+        font-family: "Roboto Mono", monospace;
+        width: 700;
+        font-size: 0.7em;
       }
       .music_player_container_enlarge{
           position: fixed;
@@ -318,7 +326,10 @@ body{
         text-align: center;
       }
       .music_player_title_container_enlarge h4{
-        font-size: 2em;
+        font-size: 2.7em;
+      }
+      .music_player_title_container_enlarge p{
+        font-size: 1.1em;
       }
       .mini_close_container_enlarge{
         position: absolute;
