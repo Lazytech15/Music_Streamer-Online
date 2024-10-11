@@ -291,7 +291,7 @@ body{
       }
       #copyright{
         position: fixed;
-        bottom: 10px;
+        bottom: 5em;
         font-family: "Roboto Mono", monospace;
         font-weight: 700;
         font-size: 0.7em;
@@ -311,7 +311,7 @@ body{
       }
       .music_player_enlarge{
         flex-direction: column;
-        gap: 3em;
+        gap: 2em;
         height: initial;
         width: initial;
       }
@@ -320,7 +320,7 @@ body{
       }
       .music_coverUrl_enlarge{
         width: 20em !important;
-        height: 20em !important;
+        height: 10em !important;
       }
       .music_player_title_container_enlarge{
         width: 100%;

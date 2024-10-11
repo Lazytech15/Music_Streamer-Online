@@ -156,7 +156,7 @@ async function playSong(audioUrl, songName, subtitle, imgUrl, element){
         barWidth: 4,
         barHeight: 1, 
         barMinHeight: 1,
-        height: 90,
+        height: 30,
         responsive: true,
         hideScrollbar: true,
         barRadius: 4
