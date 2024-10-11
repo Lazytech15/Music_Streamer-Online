@@ -1,6 +1,17 @@
+/* fonts */
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
+/* font-family: "Roboto Mono", monospace; */
+@import url('https://fonts.googleapis.com/css2?family=Afacad+Flux:wght@100..1000&display=swap');
+/* font-family: "Afacad Flux", sans-serif; */
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+/* font-family: "Bebas Neue", sans-serif; */
+@import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap');
+/* font-family: "Jost", sans-serif; */
+
 body{
     background-color: hsl(207, 20%, 9%);
     color: white;
+    font-family: "Afacad Flux", sans-serif;
 }
 @media(max-width:700px) {
     .logo_content {
@@ -102,7 +113,10 @@ body{
         align-content: center;
       }
       .ham_nav_container h3{
+        font-family: "Afacad Flux", sans-serif;
         margin-left: 2em;
+        text-transform: uppercase;
+        font-weight: 700;
       }
       .search_settings{
         display: flex;
@@ -141,9 +155,13 @@ body{
       }
 
       .titlesubtitle_container h4{
+        font-family: "Bebas Neue", sans-serif;
+        font-weight: 500;
         font-size: 1em;
       }
       .titlesubtitle_container p{
+        font-family: "Jost", sans-serif;
+        font-weight: 500;
         font-size: 0.9em;
         color: rgba(112, 112, 112, 0.986);
       }
@@ -164,8 +182,8 @@ body{
       }
       
       .song_container img{
-        width: 1.5em;
-        height: 1.5em;
+        width: 2em;
+        height: 2em;
         filter: invert();
       }
       .song_container{
@@ -189,17 +207,18 @@ body{
         z-index: 1000;
         display: flex;
         justify-content: center;
-        height: 5em;
+        height: 5.5em;
       }
       .music_player_content{
         width: 100%;
       }
       .music_player{
+        margin-top: 5px;
         display: flex;
         justify-content: space-around;
         align-items: center;
-        height: 4em;
         padding: 0.5em 1em;
+        width: 98%;
       }
 
       .music_player_title_container{
@@ -223,7 +242,10 @@ body{
         height: 4em;
         filter: invert(0);
       }
-      .music_player button{
+      .controller_container{
+        display: flex;
+      }
+      .controller_container button{
         background: none;
         border: none;
       }
@@ -233,7 +255,80 @@ body{
         padding: 6px;
         filter: invert(0);
       }
-      .music_player button:nth-child(4) .playerbtns{
+      .controller_container button:nth-child(2) .playerbtns{
         transform: rotate(180deg);
+      }
+      .runningTime{
+        display: flex;
+        justify-content: space-between;
+      }
+      .progress_container{
+        flex-direction: column;
+        width: 100%;
+      }
+      .mini_close_container{
+        position: relative;
+        top: 0.3em;
+        right: 0.5em;
+        display: flex;
+        flex-direction: row;
+        gap: 0.5em;
+        height: 20px;
+      }
+      .mini_close_container button{
+        background: none;
+        border: none;
+        background-color: #161616;
+        color: white;
+        padding: 5px;
+        display: flex;
+        align-items: center;
+        text-align: center;
+        border-radius: 0.2em;
+      }
+      .music_player_container_enlarge{
+          position: fixed;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          background-color: hsl(0, 0%, 20%);
+          z-index: 1000;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 100%;
+          height: 100%;    
+      }
+      .music_player_enlarge{
+        flex-direction: column;
+        gap: 5em;
+        height: initial;
+        width: initial;
+      }
+      .controller_container_enlarge{
+        gap: 2em;
+      }
+      .music_coverUrl_enlarge{
+        width: 20em !important;
+        height: 20em !important;
+      }
+      .music_player_title_container_enlarge{
+        width: 100%;
+        margin-left: 1.5em;
+        text-align: center;
+      }
+      .music_player_title_container_enlarge h4{
+        font-size: 2em;
+      }
+      .mini_close_container_enlarge{
+        position: absolute;
+      }
+      .mini_close_container_enlarge button{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 30px;
+        height: 30px;
+        text-align: center;
       }
 }

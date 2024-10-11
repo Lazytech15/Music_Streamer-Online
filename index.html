@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="index.css">
     <link rel="stylesheet" href="general.css">
+    <script src="https://unpkg.com/wavesurfer.js@7"></script>
+    <script src="https://unpkg.com/wavesurfer.js@7/dist/plugins/regions.min.js"></script>
     <title>Main Streaming</title>
 </head>
 <body>
@@ -41,31 +43,49 @@
                 <div class="song_bar" id="song_bar">
                     <img src="assets/default_song.png" alt="">
                     <div class="titlesubtitle_container">
-                        <h4 id="songtitle">Sample Title</h4>
-                        <p id="subtitle">Sample SubTitle</p>
+                        <h4 id="songtitle">Song Title</h4>
+                        <p id="subtitle">Sub-Title</p>
                     </div>
                     <img src="assets/play_button.png" alt="">
                 </div>
             </div>
             <div class="music_player_container">
                 <div class="music_player_content">
-                        <div class="music_player">
+                        <div class="music_player" id="music_player">
                             <img id="music_coverUrl" src="assets/default_song.png" alt="">
                         <div class="music_player_title_container">
-                            <h4 id="music_songtitle">Sample Title</h4>
-                            <p id="music_subtitle">Sample SubTitle</p>
+                            <h4 id="music_songtitle">Song Title</h4>
+                            <p id="music_subtitle">Sub-Title</p>
                         </div>
-                        <button id="backward" ><img class="playerbtns" src="assets/backward.png" alt=""></button>
-                        <button id="previousSong" ><img class="playerbtns" src="assets/backnext.png" alt=""></button>
-                        <button id="pause" ><img class="playerbtns" id="playbtn" src="assets/play_button.png" alt=""></button>
-                        <button id="nextSong"><img class="playerbtns" src="assets/backnext.png" alt=""></button>
-                        <button id="forward"><img class="playerbtns" src="assets/forward.png" alt=""></button>
+                        <div class="progress_container" style="display: none;">
+                            <div class="runningTime">
+                                <p id="startRunning">00:00</p>
+                                <p id="endRunning">05:00</p>
+                            </div>
+                            <div class="progress_wavesurfing" id="progress_wavesurfing">
+                                <!-- <input type="range" value="0" id="progress" disabled> -->
+                            </div>
+                            
+                        </div>
+                        <div class="controller_container">
+                            <button id="backward" ><img class="playerbtns" src="assets/backward.png" alt=""></button>
+                            <button id="previousSong" ><img class="playerbtns" src="assets/backnext.png" alt=""></button>
+                            <button id="pause" ><img class="playerbtns" id="playbtn" src="assets/play_button.png" alt=""></button>
+                            <button id="nextSong"><img class="playerbtns" src="assets/backnext.png" alt=""></button>
+                            <button id="forward"><img class="playerbtns" src="assets/forward.png" alt=""></button>
+                        </div>
                     </div>
+                </div>
+                <div class="mini_close_container" style="visibility: hidden;">
+                    <button id="minibtn">_</button>
                 </div>
             </div>
         </div>
     </main>
 
     <script type="module" src="index.js"></script>
+    <script>
+        
+    </script>
 </body>
 </html>
