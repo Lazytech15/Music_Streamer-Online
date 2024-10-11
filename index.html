@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="general.css">
+    <title>Main Streaming</title>
+</head>
+<body>
+    <header class="logo_container">
+        <div class="logo_content">
+            <div class="ham_nav_container">
+                <div class="hamburger-menu">
+                    <input id="menu__toggle" type="checkbox" />
+                    <label class="menu__btn" for="menu__toggle">
+                      <span></span>
+                    </label>
+                
+                    <ul class="menu__box">
+                      <li><a class="menu__item" href="#">Current</a></li>
+                      <li><a class="menu__item" href="#">All Songs</a></li>
+                      <li><a class="menu__item" href="#">Albums</a></li>
+                      <li><a class="menu__item" href="#">Artist</a></li>
+                      <li><a class="menu__item" href="#">Genres</a></li>
+                      <li><a class="menu__item" href="#">PlayList</a></li>
+                      <li><a class="menu__item" href="#">Category</a></li>
+                    </ul>
+                  </div>
+                  <h3>All Songs</h3>
+            </div>
+            <div class="search_settings">
+                <img src="assets/search_icon.png" alt="">
+                <img src="assets/3dots.png" alt="">
+            </div>
+        </div>
+    </header>
+    <main>
+        <div class="song_container">
+            <div class="song_content" id="song_content">
+                <div class="song_bar" id="song_bar">
+                    <img src="assets/default_song.png" alt="">
+                    <div class="titlesubtitle_container">
+                        <h4 id="songtitle">Sample Title</h4>
+                        <p id="subtitle">Sample SubTitle</p>
+                    </div>
+                    <img src="assets/play_button.png" alt="">
+                </div>
+            </div>
+            <div class="music_player_container">
+                <div class="music_player_content">
+                        <div class="music_player">
+                            <img id="music_coverUrl" src="assets/default_song.png" alt="">
+                        <div class="music_player_title_container">
+                            <h4 id="music_songtitle">Sample Title</h4>
+                            <p id="music_subtitle">Sample SubTitle</p>
+                        </div>
+                        <button id="backward" ><img class="playerbtns" src="assets/backward.png" alt=""></button>
+                        <button id="previousSong" ><img class="playerbtns" src="assets/backnext.png" alt=""></button>
+                        <button id="pause" ><img class="playerbtns" id="playbtn" src="assets/play_button.png" alt=""></button>
+                        <button id="nextSong"><img class="playerbtns" src="assets/backnext.png" alt=""></button>
+                        <button id="forward"><img class="playerbtns" src="assets/forward.png" alt=""></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script type="module" src="index.js"></script>
+</body>
+</html>
