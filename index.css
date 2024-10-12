@@ -268,6 +268,21 @@ body{
         flex-direction: column;
         width: 100%;
       }
+      .shuffle_repeat_container{
+        margin-top: 1em;
+        display: flex;
+        justify-content: space-between;
+      }
+      .shuffle_repeat_container button{
+        padding: 0.5em;
+        border: none;
+        background-color: #be1bff;
+        color: white;
+        text-transform: uppercase;
+        font-family: "Afacad Flux", sans-serif;
+        font-weight: 700;
+        border-radius: 0.3em;
+      }
       .mini_close_container{
         position: relative;
         top: 0.3em;
@@ -276,18 +291,20 @@ body{
         flex-direction: row;
         gap: 0.5em;
         height: 20px;
-        background-color: hsl(283, 100%, 55%);
+        /* background-color: hsl(283, 100%, 55%); */
       }
       .mini_close_container button{
         background: none;
         border: none;
-        background-color: #161616;
+        background-color: hsl(283, 100%, 55%);
         color: white;
         padding: 5px;
         display: flex;
         align-items: center;
         text-align: center;
         border-radius: 0.2em;
+        font-weight: 900;
+        text-transform: uppercase;
       }
       #copyright{
         position: fixed;
@@ -310,6 +327,7 @@ body{
           height: 100%;    
       }
       .music_player_enlarge{
+        margin-top: -2em;
         flex-direction: column;
         gap: 2em;
         height: initial;
@@ -324,7 +342,7 @@ body{
       }
       .music_player_title_container_enlarge{
         width: 100%;
-        margin-left: 1.5em;
+        margin-left: initial;
         text-align: center;
       }
       .music_player_title_container_enlarge h4{
