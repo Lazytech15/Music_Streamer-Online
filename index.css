@@ -49,7 +49,7 @@ body{
       }
       .menu__btn {
         position: fixed;
-        top: 25px;
+        top: 30px;
         left: 20px;
         width: 26px;
         height: 26px;
@@ -120,9 +120,13 @@ body{
       }
       .search_settings{
         display: flex;
-        justify-content: center;
+        justify-content: right;
         align-items: center;
-        gap: 0.5em;
+        gap: 1em;
+      }
+      .search_settings button{
+        background: none;
+        border: none;
       }
       .search_settings img{
         width: 1.5em;
@@ -194,7 +198,7 @@ body{
         display: flex;
         flex-direction: column;
         gap: 1.2em;
-        margin-top: 4em;
+        margin-top: 5em;
         padding-bottom: 5.5em;
       }
       
@@ -260,7 +264,7 @@ body{
       }
       #playbtn{
         border-radius: 50%;
-        background-color: #be1bff;
+        background-color: hsl(283, 100%, 55%);
         padding: 6px;
         filter: invert(0);
       }
@@ -413,7 +417,50 @@ body{
         animation-delay: 0.6s;
         height: 70px;
       }
-/* END HERE */
+      /* END HERE */
+
+      /* suggestioBox */
+      .suggestionBox{
+        position:absolute;
+        top: 50px;
+        right: 55px;
+        max-height: 200px;
+        overflow: auto;
+        background-color: hsla(0, 0%, 17%, 0.938);
+        color: #ffffff;
+        display: none;
+        text-align: left;
+        padding: 0.5em;
+      }
+      .suggestionContainer{
+        font-family:"Roboto Mono", monospace ;
+        font-weight: 600;
+        padding: 5px;
+        cursor: pointer;
+        border-bottom: 1px solid white;
+        font-size: 0.8em;
+      }
+      /* END HERE */
+
+      /* SEARCH */
+      .search_settings input{
+        padding: 0.3em;
+        width: 50%;
+        font-family: "Afacad Flux", sans-serif;
+        font-size: 1em;
+        font-weight: 600;
+      }
+      /* 3dots */
+      .about_Web_App{
+        position: absolute;
+        right: 10px;
+        top: 40px;
+        background-color: hsl(283, 100%, 20%);
+        color: white;
+        padding: 0.5em;
+        border-radius: 0.5em;
+        z-index: 999999;
+      }
 
       .upcomingSongs{
         position: fixed;
