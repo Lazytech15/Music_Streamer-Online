@@ -362,60 +362,63 @@ body{
       }
       .wavebar_animation_container ul li:nth-child(1){
         animation-delay: 0.2s;
-        height: 20px;
+        height: 5px;
       }
       .wavebar_animation_container ul li:nth-child(2){
         animation-delay: 0.3s;
-        height: 40px;
+        height: 10px;
       }
       .wavebar_animation_container ul li:nth-child(3){
         animation-delay: 0.4s;
-        height: 50px;
+        height: 15px;
       }
       .wavebar_animation_container ul li:nth-child(4){
         animation-delay: 0.6s;
-        height: 80px;
+        height: 40px;
       }
       .wavebar_animation_container ul li:nth-child(5){
         animation-delay: 0.5s;
-        height: 100px;
+        height: 16px;
       }
       .wavebar_animation_container ul li:nth-child(6){
         animation-delay: 0.2s;
+        height: 36px;
       }
       .wavebar_animation_container ul li:nth-child(7){
         animation-delay: 0.6s;
-        height: 20px;
+        height: 18px;
       }
       .wavebar_animation_container ul li:nth-child(8){
         animation-delay: 0.3s;
+        height: 14px;
       }
       .wavebar_animation_container ul li:nth-child(9){
         animation-delay: 0.6s;
-        height: 30px;
+        height: 13px;
       }
       .wavebar_animation_container ul li:nth-child(10){
         animation-delay: 0.4s;
-        height: 50px;
+        height: 30px;
       }
       .wavebar_animation_container ul li:nth-child(11){
         animation-delay: 0.5s;
-        height: 20px;
+        height: 22px;
       }
       .wavebar_animation_container ul li:nth-child(12){
         animation-delay: 0.3s;
+        height: 15px;
       }
       .wavebar_animation_container ul li:nth-child(13){
         animation-delay: 0.6s;
-        height: 40px;
+        height: 24px;
       }
       .wavebar_animation_container ul li:nth-child(14){
         animation-delay: 0.2s;
-        height: 20px;
+        height: 36px;
       }
       .wavebar_animation_container ul li:nth-child(15){
         animation-delay: 0.6s;
-        height: 70px;
+        height: 19px;
       }
       /* END HERE */
 
