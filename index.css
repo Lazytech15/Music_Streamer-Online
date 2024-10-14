@@ -26,7 +26,8 @@ body{
         right: 0;
         background-color: hsl(0, 0%, 20%); 
         z-index: 1000;
-        padding: 1em; 
+        padding: 1em;
+        height: 25px; 
       }
       
     /* hamburger */
@@ -328,7 +329,7 @@ body{
       } */
 
        /* animation bar */
-      .wavebar_animation_container ul{
+      /* .wavebar_animation_container ul{
         text-align: center;
         position: absolute;
         right: 0;
@@ -419,8 +420,20 @@ body{
       .wavebar_animation_container ul li:nth-child(15){
         animation-delay: 0.6s;
         height: 19px;
-      }
+      } */
       /* END HERE */
+
+      .beat-visualizer-container{
+        display: none;
+      }
+
+      .beat-visualizer-container{
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        height: 30px;
+        margin-top: 10px;
+      }
 
       /* suggestioBox */
       .suggestionBox{
@@ -465,46 +478,107 @@ body{
         z-index: 999999;
       }
 
-      .upcomingSongs{
-        position: fixed;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%,-50%);
-        background-color: rgba(0, 0, 0, 0.8);
-        padding: 3em;
-        border-radius: 10px;
-        max-height: 80svh;
-        overflow: auto;
-        z-index: 99999;
-        width: 70%;
-        
-      }
-      .upcomingSongs li{
-        padding: 10px;
-        cursor: pointer;
-        color: white;
-        background-color: hsl(0, 0%, 20%);
-        margin-bottom: 0.5em;
-        border-radius: 0.5em;
-        font-size: 1.1em;
-        font-family: "Afacad Flux", sans-serif;
-        font-weight: 600;
-      }
-      .upcomingSongs button{
-        position: absolute;
-        top: 10px;
-        right: 10px;
-        background: none;
-        border: none;
-        color: white;
-        text-transform: uppercase;
-        font-size: 1em;
-        padding: 0.3em;
-        background-color: hsl(283, 100%, 30%);
-        border-radius: 0.5em;
-        font-family: "Jost", sans-serif;
-        font-weight: 700;
-      }
+ /* CSS file (e.g., styles.css) */
+
+@keyframes slideUp {
+  from {
+      transform: translate(-50%, 100%);
+  }
+  to {
+      transform: translate(-50%, -50%);
+  }
+}
+
+@keyframes slideDown {
+  from {
+      transform: translate(-50%, -50%);
+  }
+  to {
+      transform: translate(-50%, 100%);
+  }
+}
+
+.upcomingSongs {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, 100%);
+  background-color: hsl(0, 6%, 41%);
+  border-radius: 10px;
+  max-height: 80vh;
+  overflow: auto;
+  z-index: 99999;
+  width: 90%;
+  opacity: 0;
+  transition: opacity 0.3s ease-out;
+}
+
+.slide-up {
+  animation: slideUp 0.5s ease-out forwards;
+  opacity: 1;
+}
+
+.slide-down {
+  animation: slideDown 0.5s ease-out forwards;
+}
+
+.upcomingSongs li {
+  padding: 10px;
+  cursor: pointer;
+  color: white;
+  background-color: hsl(0, 0%, 20%);
+  margin-bottom: 0.5em;
+  border-radius: 0.5em;
+  font-size: 1.1em;
+  font-family: "Afacad Flux", sans-serif;
+  font-weight: 600;
+  width: 90%;
+  margin: auto;
+  margin-bottom: 10px;
+}
+
+.upcomingSongs button {
+  background: none;
+  border: none;
+  color: white;
+  text-transform: uppercase;
+  font-size: 1em;
+  padding: 0.3em;
+  background-color: hsl(283, 100%, 30%);
+  border-radius: 0.5em;
+  font-family: "Jost", sans-serif;
+  font-weight: 700;
+}
+
+.playlist_close_container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background-color: hsl(0, 0%, 15%);
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.song-count-info {
+  color: white;
+  font-family: "Jost", sans-serif;
+  font-weight: 500;
+  margin: 0;
+}
+    
+      .playlist_close_container {
+        position: sticky;
+        top: 0;
+        margin-bottom: 10px;
+        display: flex;
+        justify-content: space-between;
+        background-color: hsl(0, 1%, 25%);
+        border-bottom-left-radius: 0.5em;
+        border-bottom-right-radius: 0.5em;
+        padding: 1em;
+        z-index: 100000;
+    }
 
       .music_player_container_enlarge{
           position: fixed;
