@@ -21,16 +21,15 @@
                     </label>
                 
                     <ul class="menu__box">
-                      <li><a class="menu__item" href="#">Current</a></li>
-                      <li><a class="menu__item" href="#">All Songs</a></li>
-                      <li><a class="menu__item" href="#">Albums</a></li>
+                      <li><a class="menu__item" href="#" id="select_allsong">All Songs</a></li>
+                      <li><a class="menu__item" href="#" id="select_category">Category</a></li>
+                      <!-- <li><a class="menu__item" href="#">Albums</a></li>
                       <li><a class="menu__item" href="#">Artist</a></li>
-                      <li><a class="menu__item" href="#">Genres</a></li>
-                      <li><a class="menu__item" href="#">PlayList</a></li>
-                      <li><a class="menu__item" href="#">Category</a></li>
+                      <li><a class="menu__item" href="#">Genres</a></li> -->
+                      
                     </ul>
                   </div>
-                  <h3>All Songs</h3>
+                  <h3 id="header_h3">All Songs</h3>
             </div>
             <div class="search_settings">
                 <button id="searchbtn"><img src="assets/search_icon.png" alt=""></button>
@@ -39,77 +38,87 @@
         </div>
     </header>
     <main>
-        <div class="song_container">
-            <div class="song_content" id="song_content">
-                <div class="song_bar" id="song_bar">
-                    <img src="assets/default_song.png" alt="">
-                    <div class="titlesubtitle_container">
-                        <h4 id="songtitle">Song Title</h4>
-                        <p id="subtitle">Sub-Title</p>
+        <section class="section_allsong_container">
+            <div class="song_container">
+                <div class="song_content" id="song_content">
+                    <div class="song_bar" id="song_bar">
+                        <img src="assets/default_song.png" alt="">
+                        <div class="titlesubtitle_container">
+                            <h4 id="songtitle">Song Title</h4>
+                            <p id="subtitle">Sub-Title</p>
+                        </div>
+                        <img src="assets/play_button.png" alt="">
                     </div>
-                    <img src="assets/play_button.png" alt="">
                 </div>
             </div>
-            <div class="music_player_container">
-                <div class="music_player_content">
-                        <div class="music_player" id="music_player">
-                            <img id="music_coverUrl" src="assets/default_song.png" alt="">
-                            <!-- <div class="wavebar_animation_container" style="visibility: hidden;">
-                                <ul>
-                                    <li></li>
-                                    <li></li>
-                                    <li></li>
-                                    <li></li>
-                                    <li></li>
-                                    <li></li>
-                                    <li></li>
-                                    <li></li>
-                                    <li></li>
-                                    <li></li>
-                                    <li></li>
-                                    <li></li>
-                                    <li></li>
-                                    <li></li>
-                                    <li></li>
-                                </ul>
-                             </div> -->
-                        <div class="music_player_title_container">
-                            <h4 id="music_songtitle">Song Title</h4>
-                            <p id="music_subtitle">Sub-Title</p>
+        </section>
+        <section class="section_category_container" style="display: none;">
+            <div class="category_container">
+                    <div class="category_list" id="category_list">
+                        <img src="assets/default_song.png" alt="">
+                        <div class="category_details_container">
+                            <h4>Category Name</h4>
+                            <p>SubName</p>
                         </div>
-                        <div class="nextsongShow" style="display: none;">
-                            <p id="playnextsong">NEXT SONG</p>
-                        </div>
-                        <div class="progress_container" style="display: none;">
-                            <div class="runningTime">
-                                <p id="startRunning">00:00</p>
-                                <p id="endRunning">05:00</p>
-                            </div>
-                            <div class="progress_wavesurfing" id="progress_wavesurfing">
-                                <!-- <input type="range" value="0" id="progress" disabled> -->
-                            </div>
-                            
-                        </div>
-                        <div class="controller_container">
-                            <button id="backward" ><img class="playerbtns" src="assets/backward.png" alt=""></button>
-                            <button id="previousSong" ><img class="playerbtns" src="assets/backnext.png" alt=""></button>
-                            <button id="pausebtn" ><img class="playerbtns" id="playbtn" src="assets/play_button.png" alt=""></button>
-                            <button id="nextSong"><img class="playerbtns" src="assets/backnext.png" alt=""></button>
-                            <button id="forward"><img class="playerbtns" src="assets/forward.png" alt=""></button>
-                        </div>
-                        <!-- <p id="copyright" style="display: none;">&copy; <script>document.write(new Date().getFullYear())</script> Emmanuel S. Ablao. All rights reserved.</p> -->
                     </div>
                 </div>
-                <div class="mini_close_container" style="visibility: hidden;">
-                    <button id="minibtn">_</button>
+            </div>
+        </section>
+        <div class="music_player_container">
+            <div class="music_player_content">
+                    <div class="music_player" id="music_player">
+                        <img id="music_coverUrl" src="assets/default_song.png" alt="">
+                        <!-- <div class="wavebar_animation_container" style="visibility: hidden;">
+                            <ul>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                            </ul>
+                         </div> -->
+                    <div class="music_player_title_container">
+                        <h4 id="music_songtitle">Song Title</h4>
+                        <p id="music_subtitle">Sub-Title</p>
+                    </div>
+                    <div class="nextsongShow" style="display: none;">
+                        <p id="playnextsong">NEXT SONG</p>
+                    </div>
+                    <div class="progress_container" style="display: none;">
+                        <div class="runningTime">
+                            <p id="startRunning">00:00</p>
+                            <p id="endRunning">05:00</p>
+                        </div>
+                        <div class="progress_wavesurfing" id="progress_wavesurfing">
+                            <!-- <input type="range" value="0" id="progress" disabled> -->
+                        </div>
+                        
+                    </div>
+                    <div class="controller_container">
+                        <button id="backward" ><img class="playerbtns" src="assets/backward.png" alt=""></button>
+                        <button id="previousSong" ><img class="playerbtns" src="assets/backnext.png" alt=""></button>
+                        <button id="pausebtn" ><img class="playerbtns" id="playbtn" src="assets/play_button.png" alt=""></button>
+                        <button id="nextSong"><img class="playerbtns" src="assets/backnext.png" alt=""></button>
+                        <button id="forward"><img class="playerbtns" src="assets/forward.png" alt=""></button>
+                    </div>
+                    <!-- <p id="copyright" style="display: none;">&copy; <script>document.write(new Date().getFullYear())</script> Emmanuel S. Ablao. All rights reserved.</p> -->
                 </div>
+            </div>
+            <div class="mini_close_container" style="visibility: hidden;">
+                <button id="minibtn">_</button>
             </div>
         </div>
     </main>
-
     <script type="module" src="index.js"></script>
-    <script>
-        
-    </script>
 </body>
 </html>
