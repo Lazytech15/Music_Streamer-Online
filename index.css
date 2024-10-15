@@ -752,6 +752,7 @@ body{
       border-radius: 1em;
       display: flex;
       padding: 0.5em;
+      object-fit: cover;
     }
     .category_header{
       width: 100%;
