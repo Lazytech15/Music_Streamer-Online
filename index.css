@@ -108,7 +108,7 @@ body{
       flex-direction: row;
       justify-content: space-between;
     }
-    .useremail_details_container {
+    /* .useremail_details_container {
       display: none;
       position: fixed;
       bottom: 6em;
@@ -133,7 +133,42 @@ body{
       color: #2e2d2d;
       width: 60%;
       animation: slide 10s linear infinite;
+    } */
+    .menu_logoutanddetails_container{
+      position: fixed;
+      bottom:7em;
+      margin-top: 1em;
+      display: flex;
+      flex-direction: column;
+      gap: 1em;
+      width: 70%;
     }
+    .useremail_details_container , .login_menu_container{
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      width: 70%;
+      margin: auto;
+      border-radius: 0.5em;
+      padding: 1em;
+      box-shadow: 2px 2px 6px rgba(0, 0, 0, .4);
+    }
+
+    .userprofilewrapper {
+      width: 40%;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      text-align: center;
+    }
+    .userprofilewrapper h4 {
+      display: flex;
+      align-items: center;
+      text-align: center;
+      color: #2e2d2d;
+      width: 60%;
+      animation: slide 10s linear infinite;
+    } 
     .useremail_details_container img {
       width: 40px;
       height: 40px;
@@ -146,8 +181,18 @@ body{
         transform: translateX(-100%);
       }
     }
+    .login_menu_container{
+      justify-content: space-around;
+      width: 70%;
+    }
+    .login_menu_container p{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #2e2d2d;
+    }
 
-    #index_login {
+    /* #index_login {
       display: none;
       position: absolute;
       top: 0.5em;
@@ -157,7 +202,7 @@ body{
       box-shadow: 2px 2px 6px rgba(0, 0, 0, .4);
       z-index: 1;
       border-radius: 50%;
-    }
+    } */
     
     #index_login img{
       width: 40px;
@@ -200,6 +245,7 @@ body{
         height: 1.5em;
         filter: invert();
       }
+      
       .song_bar {
         display: flex;
         justify-content: space-between;
