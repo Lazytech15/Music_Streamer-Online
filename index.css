@@ -47,6 +47,14 @@ body{
     }
     #menu__toggle:checked ~ .menu__box {
       left: 0 !important;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    #menu__toggle:checked ~ .menu__box > li{
+      display: flex;
+      flex-direction: column;
+      align-items:flex-start;
     }
     .menu__btn {
       position: fixed;
@@ -904,5 +912,9 @@ body{
     .playlist_song_list{
       height: 200px;
       overflow: auto;
+    }
+
+    .login_menu_container_adjust{
+      margin-bottom: -5.5em;
     }
 }
