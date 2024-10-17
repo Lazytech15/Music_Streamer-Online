@@ -141,7 +141,6 @@ body{
       display: flex;
       flex-direction: column;
       gap: 1em;
-      width: 70%;
     }
     .useremail_details_container , .login_menu_container{
       display: flex;
