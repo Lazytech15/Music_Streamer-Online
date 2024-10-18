@@ -8,6 +8,53 @@
     <script src="https://unpkg.com/wavesurfer.js@7"></script>
     <script src="https://unpkg.com/wavesurfer.js@7/dist/plugins/regions.min.js"></script>
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <style>
+        .loader-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            z-index: 99999999;
+        }
+
+        .ripple {
+            position: fixed;
+            width: 50px;
+            height: 50px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .ripple::before, .ripple::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            border: 4px solid hsl(303, 76%, 37%);
+            opacity: 0;
+            animation: ripple 3s infinite;
+        }
+
+        .ripple::after {
+            animation-delay: 1.5s;
+        }
+
+        @keyframes ripple {
+            0% {
+                transform: scale(0.5);
+                opacity: 0;
+            }
+            25% {
+                opacity: 1;
+            }
+            100% {
+                transform: scale(2.5);
+                opacity: 0;
+            }
+        }
+    </style>
     <title>Main Streaming</title>
 </head>
 <body>
@@ -97,6 +144,11 @@
                 </div>
             </div>
         </section>
+        <!-- loading animation -->
+        <div class="loader-container">
+            <div class="ripple"></div>
+        </div>
+        <!-- end here -->
         <div class="music_player_container">
             <div class="music_player_content">
                     <div class="music_player" id="music_player">
