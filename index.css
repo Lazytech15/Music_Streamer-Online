@@ -915,6 +915,177 @@ body{
     }
 
     .login_menu_container_adjust{
-      margin-bottom: -5.5em;
+      margin-bottom: -5em;
     }
+}
+@media (max-width:375px) {
+  .ham_nav_container h3{
+    font-size: 0.8em;
+  }
+  .menu__btn{
+    width: 15px;
+    height: 10px;
+  }
+  .search_settings input{
+    width: 60%;
+    padding: 0.2em;
+    font-size: 0.8em;
+  }
+  .search_settings img{
+    width: 1.2em;
+    height: 1.2em;
+  }
+  .song_bar h4{
+    font-size: 0.9em;
+  }
+  .song_bar p{
+    font-size: 0.7em;
+  }
+  .song_bar #songNameIMG{
+    width: 4em;
+    height: 4em;
+  }
+  .song_container img{
+    width: 1.5em;
+    height: 1.5em;
+  }
+  
+  .music_player img:last-child{
+    width: 20px;
+  }
+  .music_player h4{
+    font-size: 0.9em;
+  }
+  .music_player_enlarge{
+    gap: 1em;
+  }
+  .music_coverUrl_enlarge{
+    width: 12em !important;
+    height: 10em !important;
+  }
+  .music_player_title_container{
+    width: 30% !important;
+    margin-left: 0.5em;
+  }
+  .music_player_title_container_enlarge{
+    width: 70% !important;
+  }
+  .music_player_title_container_enlarge h4{
+    font-size: 1.2em !important;
+  }
+  .music_player_title_container_enlarge p{
+    font-size: 0.8em !important;
+  }
+  .music_player_title_container{
+    width: 30%;
+  }
+  .music_player #playnextsong{
+    padding: 1em 0.8em;
+    font-size: 0.6em !important;
+  }
+  .mini_close_container_enlarge button{
+    width: 25px;
+    height: 25px;
+  }
+  .runningTime{
+    font-size: 1em;
+  }
+  .shuffle_repeat_container{
+    margin-bottom: 2em;
+  }
+  .shuffle_repeat_container button{
+    font-size: 0.7em;
+  }
+  .mini_close_container_enlarge
+  .playlist_close_container p{
+    font-size: 0.8em;
+  }
+  .playlist_close_container #closenextlistbtn{
+    font-size: 0.8em;
+  }
+  .upcomingSongs li{
+    font-size: 0.9em;
+  }
+  .menu__box{
+    width: 200px;
+  }
+  .menu__item{
+    font-size: 1em;
+  }
+  
+  .useremail_details_container, .login_menu_container {
+    width: 50%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1em;
+  }
+  .useremail_details_container img{
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+  }
+  .useremail_details_container img:last-child{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+  }
+  .userprofilewrapper{
+    width: 100%;
+  }
+  .login_menu_container_adjust{
+    margin-bottom: -10em !important;
+  }
+  .login_menu_container p{
+    font-size: 0.8em;
+  }
+  .category_content{
+    height: 110px;
+  }
+  #category_songNameIMG{
+    width: 50%;
+  }
+  .category_details_container h4{
+    font-size: 1em;
+  }
+  .category_details_container p{
+    font-size: 0.8em;
+    color: #616161;
+  }
+  .song_info h5{
+    font-size: 0.9em;
+  }
+  .song_info p{
+    font-size: 0.7em;
+  }
+  .category_header #imgurl_category {
+    width: 70%;
+    height: 150px;
+  }
+  .full_song_list_content h2{
+    font-size: 1em;
+  }
+  .full_song_list_content p{
+    font-size: 0.7em;
+  }
+  .song_item{
+    height: 2em;
+  }
+  .song_item img{
+    width: 25px;
+    height: 25px;
+  }
+  .playlist_header #playlist_img {
+    border-radius: 0.5em;
+    height: 150px;
+  }
+  .playlist_details h4{
+    font-size: 1em;
+  }
+  .playlist_details p{
+    font-size: 0.9em;
+  }
+  .playlist_songs_content h3 {
+    font-size: 0.9em;
+  }
 }
